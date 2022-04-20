@@ -1,0 +1,47 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>QR Code Generator</h1>
+        <p class="paste-url">Paste a URL or text to create QR code</p>
+
+
+        <input id="qr-data" type="text" placeholder="Enter your text or URL..." onchange="getData()">
+        <button class="generate-btn" onclick="getData()">Generate QR code</button>
+
+        <div id="qrcode">
+            <img src="qr.png" height="150px" width="150px" id="qr-img" alt="">
+        </div>
+
+    </div>
+
+    <script src="qrcode.min.js"></script>
+    <script>
+        const qrData = document.getElementById("qr-data")
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            width: 150,
+            height: 150,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+
+        function getData() {
+            document.getElementById("qr-img").style.display = "none"
+            let data = qrData.value
+            qrcode.makeCode(data)
+        }
+    </script>
+</body>
+
+</html>
