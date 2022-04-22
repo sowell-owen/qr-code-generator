@@ -58,7 +58,7 @@ h1, .paste-url, input, .generate-btn {
     transition: all 800ms;
 }
 
-.generate-btn:hover, .generate-btn:active, .generate-btn:focus {
+.generate-btn:hover {
     background-color: rgb(23, 80, 187);
     font-size: 17px;
 }
