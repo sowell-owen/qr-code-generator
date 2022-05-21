@@ -26,7 +26,10 @@ input {
     border: 1px solid #999;
 }
 
-h1, .paste-url, input, .generate-btn {
+h1,
+.paste-url,
+input,
+.generate-btn {
     align-self: flex-start;
 }
 
@@ -40,6 +43,7 @@ h1, .paste-url, input, .generate-btn {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    margin: 1.5rem;
 }
 
 .paste-url {
@@ -69,4 +73,19 @@ h1, .paste-url, input, .generate-btn {
     height: 150px;
 }
 
+@media (max-width: 400px) {
 
+    h1,
+    .paste-url {
+        text-align: center;
+    }
+
+    .container {
+        height: 510px;
+    }
+
+    .generate-btn,
+    input::placeholder {
+        font-size: .85rem;
+    }
+}
